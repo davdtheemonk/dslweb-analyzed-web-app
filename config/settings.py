@@ -32,7 +32,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['mrmapp.herokuapp.com']
 
-
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Application definition
 
