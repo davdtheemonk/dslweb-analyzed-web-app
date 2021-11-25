@@ -1,0 +1,52 @@
+<Doctype! HTML>
+    <head>
+        
+    <link href="https://fonts.googleapis.com/css2?family=Roboto" rel="stylesheet"> 
+    <script src="https://kit.fontawesome.com/d5880e197d.js" crossorigin="anonymous"></script>
+    <title>Log In DAP</title>
+    <link rel="stylesheet" href="Dapweb.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&display=swap" rel="stylesheet" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    </head>
+
+    <main>
+        <body>
+          <div id="log" class="log1">
+            <i class="fas fa-hospital-user" style="font-size:60px;color:teal;"></i>
+            <p style="font-size:25px;color:teal;display:flex;justify-content: center;">LOGIN</p>
+            <br>
+            <br>   
+            <form method="post">
+              {% csrf_token %}
+              {{ form.as_p }}
+                    <div class="form-group row">
+                      <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+                      <div class="col-sm-10">
+                        <input type="email" class="form-control" id="inputEmail3" placeholder="Email" required>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+                      <div class="col-sm-10">
+                        <input type="password" class="form-control" id="inputPassword3" placeholder="Password" required>
+                      </div>
+                    </div>
+                   
+                    <div class="form-group row">
+                      <div class="col-sm-10">
+                        <button type="submit" class="btn btn-primary">Sign in</button>
+                      </div>
+                    </div>
+
+                  
+            </form>
+<a href="" >Forgot password?</a>
+            </div>
+        </body>
+    </main>
+</Doctype>

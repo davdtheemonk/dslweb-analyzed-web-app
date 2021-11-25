@@ -1,0 +1,102 @@
+
+<Doctype! HTML>
+    <head>
+        
+    <link href="https://fonts.googleapis.com/css2?family=Roboto" rel="stylesheet"> 
+    <script src="https://kit.fontawesome.com/d5880e197d.js" crossorigin="anonymous"></script>
+    <title>Log In DAP</title>
+                {% extends 'base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+{% load static %}
+    <link rel="stylesheet" href="{% static 'css/Dapweb.css' %}" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&display=swap" rel="stylesheet" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    </head>
+
+    <main>
+    
+    <nav id="n12">
+      
+
+
+            <ul>
+
+            <a style="font-family: Lobster;color:green;font-size:25px;"href=""></a>
+
+          <li> <a href="http://dsl.health.go.ke" style="color:teal;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"target="_blank" >Data Analytics portal</a></li>
+          <li><a href="#" target="_blank" style="color:teal;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">MOH</a></li>
+          <li><a href="{% url 'home' %}" style="color:teal;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">About</a></a>
+        </ul>
+      </nav>
+      </header>
+
+
+
+        <body>
+        
+          <div id="log" class="log1">
+            <i class="fas fa-hospital-user" style="font-size:60px;color:teal;"></i>
+
+            <p style="font-size:25px;color:teal;display:flex;justify-content: center;">LOGIN</p>
+            <br>
+            <br>   
+ 
+               <form method="post">
+            {% csrf_token %}
+          {% if error_message %}
+               <div class="alert alert-danger" role="alert">
+ <p>{{ error_message }}</p>
+
+       </div>
+          {% endif %}
+                                        {% for message in messages %}
+               <div class="alert alert-danger" role="alert">
+ <p>{{ message }}</p>
+
+       </div>
+{% endfor %}
+                    <div class="form-group row">
+                              {% if error_message %}
+               <div class="alert alert-danger" role="alert">
+ <p>{{ error_message }}</p>
+
+       </div>
+          {% endif %}
+                      <label for="username" class="col-sm-2 col-form-label">Username</label>
+                      <div class="col-sm-10">
+                        <input id="username" type="text" class="form-control"   name='username' placeholder="John Doe" required>
+                      
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="password" class="col-sm-2 col-form-label">Password</label>
+                      <div class="col-sm-10">
+                        <input id="password" name="password" type="password" class="form-control" placeholder="Password" required>
+                      </div>
+                    </div>
+                   
+                    <div class="form-group row">
+                      <div class="col-sm-10">
+                        <button type="submit" class="btn btn-primary">Sign in</button>
+                       
+                      </div>
+                    </div>
+
+                  
+            </form>
+             <a href="#">Dont have an account?Request Admin</a>
+            {% endblock %}
+           
+<a href="" >Forgot password?</a>
+            </div>
+        </body>
+    </main>
+</Doctype>

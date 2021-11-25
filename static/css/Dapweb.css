@@ -1,0 +1,368 @@
+
+#navbar {
+    position:absolute;
+    top:0px;
+    left:0px;
+    height:100px;
+    width: 86%;
+    background-color:azure;
+    -moz-box-shadow:50px;
+    position:fixed;
+    left:200px;
+    right:0px;
+   
+   
+    
+}
+#n12 {
+    position:fixed;
+    top:0px;
+    left:0px;
+    height:50px;
+    width: 100%;
+    background-color:azure;
+    
+    position:fixed;
+    left:0px;
+    right:0px;
+    box-shadow: black 0px 0px 5px;
+   
+    
+}
+
+#log{
+
+    box-shadow: 50px;
+    width:100%;
+    height:80%;
+    top: 100px;
+    bottom:79;
+
+
+    display: inline-block;
+    justify-content: center;
+    border-radius: 4px;
+
+}
+.alert alert-danger{
+position:fixed!important;
+    top:1250px !important;
+    }
+
+.log1{
+    position:relative;
+    top:50px !important;
+    box-shadow: 50px;
+    width:60%;
+    height:70%;
+    margin:auto;
+    border-radius: 4px;
+
+    display: flex;
+    justify-content: center;
+    font-weight: 200px;
+    padding:20px;
+  
+    box-shadow: green 0px 0px  5px;
+    
+
+
+    
+    
+    background-color:azure;
+    
+    
+    
+}
+#nav {
+    position: fixed;
+    width: 220px;
+    height: 100%;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    font-size: 20px;
+    padding-top: 20px;
+    background-color: azure;
+    overflow-x: hidden;
+  }
+input{
+    border-radius: -50px;
+
+
+}
+
+input:hover{
+    box-shadow: black 4px 4px  5px;
+    border: 0px;
+    margin:0px;
+}
+
+fieldset{
+  line-height: 25px;
+    border-radius: 50px;
+        
+    border:0px;
+   
+   
+    box-shadow:white 0px 0px 4px ;
+
+}
+.dropdown-menu{
+    position: absolute;
+}
+#space{
+
+}
+a{
+
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+}
+a:hover {
+   
+    
+
+
+
+}
+#boe{
+   
+
+}
+.container{
+ 
+    display:flex;
+    left: 0px;
+    right: 0px;
+    align-self: center;
+    
+
+    
+}
+
+#sidebar-item:last-child {
+    overflow-y:auto;
+    height: calc( 100% - 215px);
+  }
+#sidebar-item {
+    margin-bottom: 5px;
+  }
+nav ul {
+    margin-top: 10px;
+    margin: 10px;
+    
+    padding: 5px 0px 5px 30px;
+   
+}
+#box{
+    width: 0px;
+    height: 5px;
+    background-color: black;
+    margin: 6px 0;
+}
+nav li {
+    display: inline;
+    margin-right: 20px;
+    float: right;
+}
+
+button{
+    margin:0px 0px 0px 0px;
+    background-color:darkturquoise;
+    align-items: center;
+    font-size:15px;
+ 
+   
+
+
+    
+    color:white;
+    border-radius: 4px;
+}
+button:hover{
+    box-shadow: black 0px 8px 4px;
+    
+
+}
+
+.board{
+    
+    box-shadow: 50px;
+    width:90%;
+    height:70%;
+    margin:50px;
+    border-radius: 4px;
+
+    font-weight: 200px;
+    padding:20px;
+  
+    box-shadow: green 0px 0px  5px;
+    
+
+
+    
+    
+    background-color:darkslategray;
+    
+    
+    
+    
+    
+
+
+}
+
+
+fieldset:hover{
+
+ 
+    
+    border:0px;
+   
+    box-shadow:black 0px 0px 4px ;
+    
+    
+
+  
+}
+body{
+    background-color:greenyellow;
+    max-width: 1000px !important;
+    margin:0px auto !important;
+    
+
+
+}
+
+.flt:hover{
+   
+    box-shadow: 50px;
+    box-shadow: green 4px 5px  5px;
+    
+}
+.tabb{
+    position: relative;
+    display: inline-block;
+    border-radius: 4px
+
+}
+.tabb:hover .tabb1{
+    display: block;
+}
+#helptxt{
+    color:green !important;
+}
+.tabb1{
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius:4px;
+
+
+}
+.tabb2{
+    padding: 15px;
+    text-align: center;
+
+}
+.flt{
+    border-radius: 50%;
+    width:20px;
+    height:20px;
+    bottom: 50px;
+    box-shadow: black 4px 5px  5px;
+    left:800px;
+    position:relative;
+   
+
+}
+
+
+
+#dashboard{
+
+    
+    animation-name: dash;
+    animation-duration:3s;
+    animation-fill-mode: forward;
+    box-shadow: 50px;
+    width:100%;
+    height:100%;
+    top: 70px;
+    bottom:79;
+    margin:50px;
+    position:relative;
+
+   
+    animation-timing-function:ease-in;
+    border-radius: 4px;
+
+
+}
+@keyframes dash {
+    0%{
+        background-color:darkslategray;
+        top:-50px;
+    }
+    50%{
+        background-color:white;
+        top:50px;
+
+    }
+    100%{
+        background-color:darkslategray;
+        top:70px;
+
+    }
+
+}    
+#info{
+    position: right;
+
+}
+.dap{
+    height:50px;
+    width:150px;
+    border-radius: 4px;
+    left:350px;
+    bottom:750px;
+    position:relative;
+
+}
+#text{
+    color: green;
+    left: 380px;
+    bottom:750px;
+    position:relative
+}
+#info:hover{
+
+
+}
+.moh{
+
+    
+    
+    
+
+   
+}
+.bottom{
+
+   
+  
+}
+
+.stu{
+
+}
+.fyi{
+
+}
+
+   
+
