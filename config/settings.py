@@ -28,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-c6x@ta#n&%4u^fb!7-6gl)n^o=+hvy#+-*n#*)**i)%g^b+2df'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['mrmapp.herokuapp.com']
 
