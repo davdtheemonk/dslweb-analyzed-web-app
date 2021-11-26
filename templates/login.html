@@ -44,8 +44,8 @@
         
           <div >
             <br>
-            <br>
-            <br>   
+            
+            
                  {% for message in messages %}
      <div class="alert alert-danger" role="alert">
      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -54,32 +54,37 @@
   {{ message }}
 </div>
      {% endfor %}
-   <i class="fas fa-hospital-user" style="font-size:60px;color:teal;"></i>
-   <p style="font-size:25px;color:teal;display:flex;justify-content: center;">LOGIN</p>
+    
+   
+
                <form method="POST">
               {% csrf_token %}
                      
-
-  
-                 <div class="login">
+<div class="login">
   <div class="login-triangle"></div>
   
-  <h2 class="login-header">Log in</h2>
+  <h2 class="login-header"><i class="fas fa-hospital-user" style="font-size:60px;color:white;"></i></i>Log in</h2>
 
   <form class="login-container">
     <p><input type="text"   name="username" placeholder="John Doe" required>
     <p><input type="password" name="password" placeholder="Password" required>
     <p><input type="submit" value="Log in"></p>
+    <a href="#">Dont have an account?Request Admin</a>
+            {% endblock %}
+           
+<a href="" >Forgot password?</a>
   </form>
 </div>
 
 
+
+
+
+             
+
                   
             </form>
-             <a href="#">Dont have an account?Request Admin</a>
-            {% endblock %}
-           
-<a href="" >Forgot password?</a>
+             
             </div>
         </body>
     </main>
