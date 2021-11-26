@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-c6x@ta#n&%4u^fb!7-6gl)n^o=+hvy#+-*n#*)**i)%g^b+2df
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['mrmapp.herokuapp.com']
+ALLOWED_HOSTS = ['mrmapp.herokuapp.com','dapanalyzed.herokuapp.com']
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
