@@ -17,7 +17,9 @@
 
 
 {% load static %}
-
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Changa:wght@200;500&family=Roboto:wght@100&display=swap" rel="stylesheet"> 
 
    <link rel="stylesheet" href="{% static 'css/Dapweb.css' %}" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&display=swap" rel="stylesheet" type="text/css">
@@ -31,10 +33,22 @@
 
 <main>
 
+<script>
+var myVar;
+
+function myFunction() {
+  myVar = setTimeout(showPage, 3000);
+}
+
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("myDiv").style.display = "block";
+}
+</script>
 
 
 
-<body>
+<body onload="myFunction()" style="margin:0;">
 
 {% if user.is_authenticated %}
   
@@ -250,6 +264,57 @@
 </div>
 
 {% else %}
+<div id="Welcome-section">
+
+<div id="loader"></div>
+
+<div style="display:none;" id="myDiv" class="animate-bottom">
+    <div class="home">
+    <nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="#">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">About DAP Analyzed</li>
+  </ol>
+</nav>
+   <div class="homei">
+   <u><h5 style="color:black;font-family: 'Changa', sans-serif;">Welcome to DAP analyzed</h5></u> 
+<p style="color:black" > 
+
+Data analytics platform analyzed, Is a independent implementation of the ministry of health data analytics platform that came up during health IT hackathon held at Kabarak University from 24th-26th SEP 2021. This project is mainly aimed at going deeper in data anlaysis,prediction and provinsion of valuable insights of already available health data.The problem statements that brought fourth this project was the inability of the Analytic platform(MOH DAP)to:<br>
+1.Provide distributed data either among gender roles,age or any other underlying issues.<br>2.The analytics platform in place could not give the difference between the original data and predicted data<br>
+3.Missing data.
+<br>4.Heavy terminologies for the platform users.<br>
+5.Lack of real time data and prediction.<br>
+6.Lack of a mechanism to update the data.</p>
+
+<u><h5 style="color:black;font-family: 'Changa', sans-serif;">Why this platform</h5></u>
+<p style="color:black">This site is extensively built for the ministry of health,health officers and health practioners or any individual with an aspiration to dive deep in the health data.The big question is always understanding the data provided.Theres alot of terms in the DAP platform a health practioner or a gov't official cant relate to.This platform is built to bring to light each and every item implemented so as to make sure each data insight is correct and can be backed up.</p>
+
+ <div class="alert alert-danger" role="alert">
+ <p>Please Login to Continue</p>
+  <a href="{% url 'login' %}">Log In</a></p>
+          </div>
+    
+       
+    </div>      
+          
+    </div>
+       <footer >
+     
+      <p style="font-size: 11px;">Copyright &copy; 2021 David Mugalla <i class="fas fa-circle-notch"></i> Hosted on Github/Heroku</p>
+      <div id="social">
+                  <!--Your Github,linkedin and instagram Social media link goes here-->
+              <a target="_blank" href="http://www.github.com/davdtheemonk"><i style="font-size:30px;color:grey;" class="fab fa-github-square"></i></a>
+<a target="_blank" href="https://ke.linkedin.com/in/david-mugalla-198149215">    <i style="font-size:30px;color:grey;" class="fab fa-linkedin-in"></i></a>
+              <a href="#"><i style ="font-size:30px;color:grey;" class="fab fa-instagram"></i></a>
+              
+              </div>
+      
+    
+       
+    </footer>
+   
+     </div>
 
       <nav id="n12">
       
@@ -276,45 +341,11 @@
 </button>
   {{ message }}
 </div>
+</div>
+</div>
      {% endfor %}
-         <div class="container mt-5">
-
-        <!-- Card -->
-        <div class="card" style="width: 58rem;">
+ 
     
-          <div class="card-body">
-           
-            <h4 class="font-weight-bold mb-0">Welcome to DAP analyzed</h4>
-          </div>
-
-    
-          <hr class="my-0">
-    
-          <div class="card-body">
-            
-            <u><h5>What is DAP ANALYZED</h5></u>
-             <p>
-
-Data analytics platform analyzed, Is a independent implementation of the ministry of health data analytics platform.This project is mainly aimed at going deeper in data anlaysis,prediction and provinsion of valuable insights of already available health data.The problem statements that brought fourth this project was the inability of the Analytic platform(MOH DAP)to:<br>
-1.Provide distributed data either among gender roles,age or any other underlying issues.<br>2.The analytics platform in place could not give the difference between the original data and predicted data<br>
-3.Missing data.
-<br>4.Heavy terminologies for the platform users.<br>
-5.Lack of real time data and prediction.<br>
-6.Lack of a mechanism to update the data.</p>
-
-<u><h5>Why this platform</h5></u>
-<p>This site is extensively built for the ministry of health,health officers and health practioners or any individual with an aspiration to dive deep in the health data.The big question is always understanding the data provided.Theres alot of terms in the DAP platform a health practioner or a gov't official cant relate to.This platform is built to bring to light each and every item implemented so as to make sure each data insight is correct and can be backed up.</p>
-
- <div class="alert alert-danger" role="alert">
- <p>OOPS!Website is not live yet but you can stick around.</p>
-  <a href="{% url 'login' %}">Log In</a></p>
-          </div>
-    
-        </div>
-        <!-- Card -->
-    
-      </div>
-      
       
 {% endif %}
 {% endblock %}
