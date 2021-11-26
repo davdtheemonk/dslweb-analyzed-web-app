@@ -1,5 +1,5 @@
 
-<Doctype! HTML>
+<!Doctype html>
     <head>
         
     <link href="https://fonts.googleapis.com/css2?family=Roboto" rel="stylesheet"> 
@@ -22,6 +22,22 @@
     </head>
 
     <main>
+    <script>
+
+var myVar;
+
+function myFunction() {
+  myVar = setTimeout(showPage, 3000);
+}
+
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("myDiv").style.display = "block";
+}
+</script>
+    <div id="loader"></div>
+
+<div style="display:none;" id="myDiv" class="animate-bottom">
     <header>
     <nav id="n12">
       
@@ -39,8 +55,7 @@
       </header>
 
 
-
-        <body id="space">
+    <body id="space" onload="myFunction()" style="margin:0;">
         
           <div >
             <br>
@@ -87,5 +102,6 @@
              
             </div>
         </body>
+        </div>
     </main>
-</Doctype>
+</html>
