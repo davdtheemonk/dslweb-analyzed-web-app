@@ -283,6 +283,43 @@ a:hover {
 
     
 }
+.homei{
+  margin: auto;
+  width: 70%;
+ 
+  padding: 10px;
+
+}
+
+.home{
+   
+    color:white;
+    position:absolute;
+  
+    top:150px;
+      background-color:white;
+        height:  600px;
+      width:100%;
+    left:0px;
+    right:0px;
+    z-index:1px;
+
+}
+
+ footer{
+    text-align:center;
+    color:white;
+    position:absolute;
+    bottom:10px;
+    top: 1600px;
+      background-color:black;
+        height:  120px;
+      width:100%;
+    left:0px;
+    right:0px;
+    z-index:1px;
+    
+  }
 
 #sidebar-item:last-child {
     overflow-y:auto;
@@ -396,6 +433,60 @@ body{
 #helptxt{
     color:green !important;
 }
+#social{
+      color:grey;
+    
+    
+  }
+  #loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 70px;
+  height: 70px;
+  margin: -45px 0 0 -46px;
+  border: 10px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 10px solid teal;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 } 
+  to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom { 
+  from{ bottom:-100px; opacity:0 } 
+  to{ bottom:0; opacity:1 }
+}
+
+#myDiv {
+  display: none;
+  
+  
+}
 .tabb1{
     display: none;
     position: absolute;
@@ -508,6 +599,7 @@ body{
 }
 
    
+
 
     
     </style>
