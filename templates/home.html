@@ -16,6 +16,7 @@
 {% block content %}
 
 
+
 {% load static %}
    <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,32 +34,23 @@
 
 <main>
 
-<script>
-var myVar;
-
-function myFunction() {
-  myVar = setTimeout(showPage, 3000);
-}
-
-function showPage() {
-  document.getElementById("loader").style.display = "none";
-  document.getElementById("myDiv").style.display = "block";
-}
-</script>
 
 
 
+ 
 <body onload="myFunction()" style="margin:0;">
 
 {% if user.is_authenticated %}
   
 
+
     <div class="container">
+      
     
     <header>
 
        </div>
-}
+
         <nav id="nav">
             <header>
                 <i class="fas fa-hospital-user" style="font-size:60px;color:teal;display:flex;justify-content: center;"></i>
@@ -67,10 +59,10 @@ function showPage() {
                                                                            {% for message in messages %}
                <div class="alert alert-info" role="alert">
                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-  <span aria-hidden="true">&times;</span>
-</button>
- <p style="font-size:15px">{{ message }}</p>
-</div>
+   <span aria-hidden="true">&times;</span>
+   </button>
+   <p style="font-size:15px">{{ message }}</p>
+     </div>
 {% endfor %}
             <br>
             <br>
@@ -97,17 +89,15 @@ function showPage() {
             <br>
         
             <i class="fas fa-chart-pie" style="color: teal;line-height:3.5em;margin-left:0.5em;"><a data-toggle="modal" data-target=".bd-example-modal-lg" href="#foo" style="color: grey;">   Distribution</a></i>
-         
-
- <div class="modal fade bd-example-modal-lg" id= "foo" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
+         <div class="modal fade bd-example-modal-lg" id= "foo" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+       <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <p>hello</p>
     </div>
-  </div>
-</div>
+   </div>
+   </div>
 
-            <br>
+          <br>
 
             <i class="fas fa-chart-line" style="color: teal;line-height:3.5em;margin-left:0.5em;"><a href="#Post_caption" style="color: grey;" >   Predictions</a></i>
 
@@ -174,6 +164,9 @@ function showPage() {
 </div>
 
 
+<div id="loader"></div>
+
+<div style="display:none;" id="myDiv" class="animate-bottom">
 <div id="dashboard" class="board">
 <div class="form-group row">
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -235,22 +228,21 @@ function showPage() {
 
         <!-- Card -->
         
-         <canvas id="line-chart" width="800" height="800"></canvas>
+         
          
           
           <div class="card" style="width: 58rem;">
           <div class="card-body">
             <p class="text-uppercase small mb-2"><strong>Indicators Survey</strong></p>
             <h5 class="font-weight-bold mb-0">General Analysis</h5>
+            <canvas id="myChart" width="800px" height="200px"></canvas>
+            
           </div>
 
     
           <hr class="my-0">
     
-          <div class="card-body">
-            <canvas id="barChart"></canvas>
-          </div>
-    
+          
         </div>
         <!-- Card -->
     
@@ -262,8 +254,55 @@ function showPage() {
 
 
 </div>
-
+</div>
+</div>
 {% else %}
+{% block scripts %}
+<script>
+
+$(document).ready(function(){
+  const ctx = document.getElementById('myChart').getContext('2d');
+const myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: ['Jan', 'Feb', 'Mar', 'April', 'May', 'Jun','July','Aug','Sep','Oct','Nov','Dec'],
+        datasets: [{
+            label: 'Indicator Summary',
+            data: [12, 19, 3, 5, 2, 3, 10, 12, 6, 14, 4, 9],
+            backgroundColor: [
+                'teal',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'green',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 2
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+
+
+});
+
+ 
+</script>
+{% endblock scripts %}
 <div id="Welcome-section">
 
 <div id="loader"></div>
@@ -291,7 +330,7 @@ Data analytics platform analyzed, Is a independent implementation of the ministr
 <p style="color:black">This site is extensively built for the ministry of health,health officers and health practioners or any individual with an aspiration to dive deep in the health data.The big question is always understanding the data provided.Theres alot of terms in the DAP platform a health practioner or a gov't official cant relate to.This platform is built to bring to light each and every item implemented so as to make sure each data insight is correct and can be backed up.</p>
 
  <div class="alert alert-danger" role="alert">
- <p>Website is not live yet!But you can stick around</p>
+ <p>Please Login to Continue</p>
   <a href="{% url 'login' %}">Log In</a></p>
           </div>
     
@@ -343,18 +382,22 @@ Data analytics platform analyzed, Is a independent implementation of the ministr
 </div>
 </div>
 </div>
+
+
+
+
+
+    
+   
+
+
+</body>
      {% endfor %}
  
     
       
 {% endif %}
 {% endblock %}
-
-
-<script scr="{% static 'js/sx.js' %}" type="text/javascript"></script>
-
-
-</body>
 </main>
 
 </html>
